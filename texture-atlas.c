@@ -338,8 +338,13 @@ texture_atlas_upload( texture_atlas_t * self )
     }
     else
     {
+#ifdef DEVOLVE_IOS_TARGET
+        fprintf(stderr, "Everything is doomed. (NO GL_RED in GLES\n");
+        exit(EXIT_FAILURE);
+#else
         glTexImage2D( GL_TEXTURE_2D, 0, GL_RED, self->width, self->height,
                       0, GL_RED, GL_UNSIGNED_BYTE, self->data );
+#endif
     }
 }
 

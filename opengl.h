@@ -36,7 +36,7 @@
 
 #if defined(__APPLE__)
 /* #   include <GL/glew.h> */
-#  ifdef GL_ES_VERSION_2_0
+# ifdef DEVOLVE_IOS_TARGET
 #    include <OpenGLES/ES2/gl.h>
 #  else
 #    include <OpenGL/gl.h>
